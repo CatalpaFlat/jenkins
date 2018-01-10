@@ -1,0 +1,33 @@
+server:
+  port: 8383
+spring:
+#配置数据源
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security?useUnicode=yes&characterEncoding=UTF-8
+    username: spring
+    password: spring
+#redis
+  redis:
+    port: 6379
+    host: 192.168.137.111
+
+#开启security
+security:
+  basic:
+    enabled: true
+
+#自定义
+catalpaFlat:
+  security:
+    antMatchers:
+      permitAll: /promptLogin
+    oauth2s:
+      outer:
+        storeType: jdbc
+      inside:
+        - clientId: catalpaFlat
+          clientSecret: catalpaFlat-secret
+          tokenValiditySeconds: 3200
+          grantType: refresh_token,password
+          scopes: all

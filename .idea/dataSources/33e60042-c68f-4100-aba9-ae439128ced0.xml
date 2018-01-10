@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="security@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="security">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="books"/>
+    <schema id="4" parent="1" name="cache"/>
+    <schema id="5" parent="1" name="dbtest"/>
+    <schema id="6" parent="1" name="hrjtgw"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="sftc"/>
+    <schema id="11" parent="1" name="shiro"/>
+    <schema id="12" parent="1" name="study_group"/>
+    <schema id="13" parent="1" name="test"/>
+    <schema id="14" parent="1" name="zentao"/>
+    <schema id="15" parent="1" name="zentaopro"/>
+    <table id="16" parent="2" name="authorities">
+      <Comment>权限表</Comment>
+    </table>
+    <table id="17" parent="2" name="group_authorities">
+      <Comment>组权限表</Comment>
+    </table>
+    <table id="18" parent="2" name="group_members">
+      <Comment>组成员表</Comment>
+    </table>
+    <table id="19" parent="2" name="groups">
+      <Comment>组表</Comment>
+    </table>
+    <table id="20" parent="2" name="oauth_access_token"/>
+    <table id="21" parent="2" name="oauth_refresh_token"/>
+    <table id="22" parent="2" name="persistent_logins"/>
+    <table id="23" parent="2" name="userconnection"/>
+    <table id="24" parent="2" name="users">
+      <Comment>用户表</Comment>
+    </table>
+    <column id="25" parent="16" name="id">
+      <Position>1</Position>
+      <Comment>权限id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="16" name="user_id">
+      <Position>2</Position>
+      <Comment>用户id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="16" name="authority">
+      <Position>3</Position>
+      <Comment>权限</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="28" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="17" name="id">
+      <Position>1</Position>
+      <Comment>组权限id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="17" name="group_id">
+      <Position>2</Position>
+      <Comment>组id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="17" name="group_name">
+      <Position>3</Position>
+      <Comment>组名</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="17" name="authority">
+      <Position>4</Position>
+      <Comment>权限</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="33" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="18" name="id">
+      <Position>1</Position>
+      <Comment>组成员id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="18" name="user_id">
+      <Position>2</Position>
+      <Comment>用户id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="18" name="group_id">
+      <Position>3</Position>
+      <Comment>组id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="37" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="19" name="id">
+      <Position>1</Position>
+      <Comment>组id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="19" name="group_name">
+      <Position>2</Position>
+      <Comment>组名</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="40" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="20" name="create_time">
+      <Position>1</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="42" parent="20" name="token_id">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="43" parent="20" name="token">
+      <Position>3</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="44" parent="20" name="authentication_id">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="45" parent="20" name="user_name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="46" parent="20" name="client_id">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="47" parent="20" name="authentication">
+      <Position>7</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="48" parent="20" name="refresh_token">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="49" parent="21" name="create_time">
+      <Position>1</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="50" parent="21" name="token_id">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="51" parent="21" name="token">
+      <Position>3</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="52" parent="21" name="authentication">
+      <Position>4</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="53" parent="22" name="username">
+      <Position>1</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="22" name="series">
+      <Position>2</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="22" name="token">
+      <Position>3</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="22" name="last_used">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="57" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>series</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="23" name="userId">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="23" name="providerId">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="23" name="providerUserId">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="61" parent="23" name="rank">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="23" name="displayName">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="63" parent="23" name="profileUrl">
+      <Position>6</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="64" parent="23" name="imageUrl">
+      <Position>7</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="65" parent="23" name="accessToken">
+      <Position>8</Position>
+      <DataType>varchar(512)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="23" name="secret">
+      <Position>9</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="67" parent="23" name="refreshToken">
+      <Position>10</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="68" parent="23" name="expireTime">
+      <Position>11</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="69" parent="23" name="UserConnectionRank">
+      <ColNames>userId
+providerId
+rank</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userId
+providerId
+providerUserId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="71" parent="23" name="UserConnectionRank">
+      <ColNames>userId
+providerId
+rank</ColNames>
+      <UnderlyingIndexName>UserConnectionRank</UnderlyingIndexName>
+    </key>
+    <column id="72" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="73" parent="24" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="24" name="passwork">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="24" name="enabled">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="76" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
