@@ -1,0 +1,23 @@
+*.class
+*.classpath
+*.project
+*.settings/
+
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+# *.war
+*.ear
+*.idea
+*.gradle
+
+build
+
+src/test
+
+hs_err_pid*
+
+*.iml
