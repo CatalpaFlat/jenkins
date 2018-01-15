@@ -12,7 +12,7 @@
 # *.war
 *.ear
 *.idea
-*.gradle
+.gradle
 
 build
 
