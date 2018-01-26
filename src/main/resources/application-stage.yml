@@ -1,0 +1,4 @@
+#顺丰同城api测试环境
+sf-api:
+  domain:
+    same: http://api:8080/

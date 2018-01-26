@@ -2,6 +2,10 @@ allprojects {
     group 'com.chen'
     version '1.0-SNAPSHOT'
     repositories {
+        jcenter()
+        mavenCentral()
+        maven { url 'http://maven.apache.org/POM/4.0.0' }
+        maven { url 'http://mvnrepository.com/artifact' }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
 }
@@ -47,13 +51,6 @@ jar {
                    'Main-Class': 'com.chen.GradleDemoApplication'
     }
 }
-
-repositories {
-    jcenter()
-    mavenLocal()
-    mavenCentral()
-}
-
 dependencyManagement {
     imports {
         mavenBom 'io.spring.platform:platform-bom:Brussels-SR6'
@@ -63,6 +60,12 @@ dependencyManagement {
 
 ext {
     junitVersion = '4.12'
+    lombokVersion = '1.16.10'
+    aspectJweaverVersion = '1.7.4'
+    aspectJrtVersion = '1.5.4'
+    gsonVersion = '2.8.0'
+    jsonVersion = '20090211'
+    netSfJson = '2.4'
 }
 
 dependencies {
@@ -70,7 +73,34 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-autoconfigure'
     compile 'org.springframework.boot:spring-boot-starter-tomcat'
+    compile 'org.springframework.boot:spring-boot-starter-aop'
+    compile "org.projectlombok:lombok:${lombokVersion}"
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+    compile 'org.springframework.boot:spring-boot-configuration-processor'
     testCompile "junit:junit:${junitVersion}"
+    //common
+        //commons-lang
+        compile 'commons-lang:commons-lang'
+        //commons-collections
+        compile 'commons-collections:commons-collections'
+        //commons-beanutils
+        compile 'commons-beanutils:commons-beanutils'
+        //commons-io
+        compile 'commons-io:commons-io'
+    //aspectj
+    compile "org.aspectj:aspectjweaver:${aspectJweaverVersion}"
+    compile "aspectj:aspectjrt:${aspectJrtVersion}"
+
+    //json
+        //gson
+        compile "com.google.code.gson:gson:${gsonVersion}"
+        //org.json
+        compile "org.json:json:${jsonVersion}"
+        //net.sf.json
+        compile group: 'net.sf.json-lib', name: 'json-lib', version: '2.4',classifier:'jdk15'
+
+    // https://mvnrepository.com/artifact/org.javassist/javassist
+    compile group: 'org.javassist', name: 'javassist', version: '3.22.0-GA'
+
 }
 

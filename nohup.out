@@ -1,0 +1,59 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+Exception in thread "DisconnectableInputStream source reader" org.gradle.api.UncheckedIOException: java.io.IOException: �ܾ����ʡ�
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:57)
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:40)
+	at org.gradle.util.DisconnectableInputStream$1.run(DisconnectableInputStream.java:125)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.IOException: �ܾ����ʡ�
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at org.gradle.util.DisconnectableInputStream$1.run(DisconnectableInputStream.java:96)
+	... 1 more
+The plugin id 'spring-boot' is deprecated. Please use 'org.springframework.boot' instead.
+:compileJava
+:processResources UP-TO-DATE
+:classes
+:findMainClass
+:bootRun
+   _____        _          _                ______  _         _   
+  / ____|      | |        | |              |  ____|| |       | |  
+ | |      __ _ | |_  __ _ | | _ __    __ _ | |__   | |  __ _ | |_ 
+ | |     / _` || __|/ _` || || '_ \  / _` ||  __|  | | / _` || __|
+ | |____| (_| || |_| (_| || || |_) || (_| || |     | || (_| || |_ 
+  \_____|\__,_| \__|\__,_||_|| .__/  \__,_||_|     |_| \__,_| \__|
+                             | |                                  
+                             |_|
+          ����Spring Boot ����  ��v2.0.0.BUILD-SUNAPSHOT��
+2018-01-16 15:11:12.475  INFO 33984 --- [           main] com.chen.GradleDemoApplication           : Starting GradleDemoApplication on CatalpaFlat-PC with PID 33984 (G:\Project\gradle-demo\build\classes\java\main started by CatalpaFlat in G:\Project\gradle-demo)
+2018-01-16 15:11:12.482  INFO 33984 --- [           main] com.chen.GradleDemoApplication           : No active profile set, falling back to default profiles: default
+2018-01-16 15:11:12.582  INFO 33984 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1d082e88: startup date [Tue Jan 16 15:11:12 CST 2018]; root of context hierarchy
+2018-01-16 15:11:16.091  INFO 33984 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8888 (http)
+2018-01-16 15:11:16.114  INFO 33984 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-01-16 15:11:16.116  INFO 33984 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-01-16 15:11:16.442  INFO 33984 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-01-16 15:11:16.442  INFO 33984 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3865 ms
+2018-01-16 15:11:16.815  INFO 33984 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-01-16 15:11:16.824  INFO 33984 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-01-16 15:11:16.825  INFO 33984 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-01-16 15:11:16.825  INFO 33984 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-01-16 15:11:16.825  INFO 33984 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-01-16 15:11:17.465  INFO 33984 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1d082e88: startup date [Tue Jan 16 15:11:12 CST 2018]; root of context hierarchy
+2018-01-16 15:11:17.582  INFO 33984 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.chen.GradleDemoApplication.hello()
+2018-01-16 15:11:17.585  INFO 33984 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/path/{isInt}/{isString}],methods=[GET]}" onto public com.chen.operate.model.vo.ResponseVO com.chen.GradleDemoApplication.pathGet(java.lang.Integer,java.lang.String)
+2018-01-16 15:11:17.589  INFO 33984 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-01-16 15:11:17.590  INFO 33984 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-16 15:11:17.645  INFO 33984 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-16 15:11:17.646  INFO 33984 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-16 15:11:17.723  INFO 33984 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-16 15:11:17.985  INFO 33984 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-01-16 15:11:18.100  INFO 33984 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8888 (http)
+2018-01-16 15:11:18.107  INFO 33984 --- [           main] com.chen.GradleDemoApplication           : Started GradleDemoApplication in 6.378 seconds (JVM running for 7.094)
+2018-01-16 15:12:28.791  INFO 33984 --- [nio-8888-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-01-16 15:12:28.791  INFO 33984 --- [nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-01-16 15:12:28.853  INFO 33984 --- [nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 62 ms
+2018-01-16 15:13:17.855  INFO 33984 --- [nio-8888-exec-7] com.chen.GradleDemoApplication           : int:1
+2018-01-16 15:13:17.856  INFO 33984 --- [nio-8888-exec-7] com.chen.GradleDemoApplication           : String:chen
+2018-01-16 15:13:30.984  WARN 33984 --- [nio-8888-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "1a"

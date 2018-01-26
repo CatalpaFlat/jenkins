@@ -1,0 +1,4 @@
+#顺丰同城api生产环境
+sf-api:
+  domain:
+    same: http://api.sf-rush.com/
